@@ -49,6 +49,7 @@
 
 string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 Console.WriteLine($"stores{Path.DirectorySeparatorChar}201");
+Console.WriteLine(Path.Combine("stores","201")); 
 Console.WriteLine(Path.GetExtension("sales.json"));
 string fileName = $"stores{Path.DirectorySeparatorChar}201{Path.DirectorySeparatorChar}sales{Path.DirectorySeparatorChar}sales.json";
 FileInfo info = new FileInfo(fileName);
