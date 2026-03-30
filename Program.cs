@@ -1,27 +1,40 @@
-﻿using System.IO;
-using System.Collections.Generic;
+﻿IEnumerable<string> listOfDirectories = Directory.EnumerateDirectories("stores");
 
-var salesFiles = FindFiles("stores");
+foreach (var dir in listOfDirectories) {
+    Console.WriteLine(dir);
+}
 
-foreach (var file in salesFiles)
+IEnumerable<string> files = Directory.EnumerateFiles("stores");
+
+foreach (var file in files)
 {
     Console.WriteLine(file);
 }
 
-IEnumerable<string> FindFiles(string folderName)
-{
-    List<string> salesFiles = new List<string>();
+// using System.IO;
+// using System.Collections.Generic;
 
-    var foundFiles = Directory.EnumerateFiles(folderName, "*", SearchOption.AllDirectories);
+// var salesFiles = FindFiles("stores");
 
-    foreach (var file in foundFiles)
-    {
-        // The file name will contain the full path, so only check the end of it
-        if (file.EndsWith("sales.json"))
-        {
-            salesFiles.Add(file);
-        }
-    }
+// foreach (var file in salesFiles)
+// {
+//     Console.WriteLine(file);
+// }
 
-    return salesFiles;
-}
+// IEnumerable<string> FindFiles(string folderName)
+// {
+//     List<string> salesFiles = new List<string>();
+
+//     var foundFiles = Directory.EnumerateFiles(folderName, "*", SearchOption.AllDirectories);
+
+//     foreach (var file in foundFiles)
+//     {
+//         // The file name will contain the full path, so only check the end of it
+//         if (file.EndsWith("sales.json"))
+//         {
+//             salesFiles.Add(file);
+//         }
+//     }
+
+//     return salesFiles;
+// }
