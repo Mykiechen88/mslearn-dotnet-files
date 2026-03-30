@@ -46,3 +46,5 @@ IEnumerable<string> FindFiles(string folderName)
 
     return salesFiles;
 }
+
+string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
