@@ -42,6 +42,15 @@ foreach (var file in foundFiles)
     }
 }
 
+Directory.CreateDirectory(Path.Combine(Directory.GetCurrentDirectory(), "stores","201","newDir"));
+Console.WriteLine("Directory created successfully.");
+
+bool doesDirectoryExist = Directory.Exists(filePath);
+
+File.WriteAllText(Path.Combine(Directory.GetCurrentDirectory(), "greeting.txt"), "Hello World!");
+
+File.WriteAllText(Path.Combine(salesTotalDir, "totals.txt"), String.Empty);
+
 IEnumerable<string> FindFiles(string folderName)
 {
     List<string> salesFiles = new List<string>();
